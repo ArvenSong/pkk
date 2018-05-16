@@ -154,7 +154,7 @@ export default class Player extends Sprite {
      if (this.isUp){
       this.x+=5
     } else if (!this.isUp&&this.x>50){
-      this.x -=2
+      this.x -=3
     }
   }
 }

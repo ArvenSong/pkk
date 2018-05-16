@@ -6,21 +6,20 @@ atlas.src = 'images/Common.png'
 
 export default class GameInfo {
   renderGameScore(ctx, score) {
-    // ctx.save(); //保存画布状态
-    // // ctx.translate(100, 100);
-    // ctx.rotate(90 * Math.PI / 180); //选择画布
-    // this.drawBowtie(ctx, "yellow", score); //绘制文字
-    // this.dot(ctx);
-    // ctx.restore();//恢复画布状态
+
+    ctx.rotate(90 * Math.PI / 180);
+  
+    
  
     ctx.fillStyle = "#000000"
     ctx.font      = "20px @Arial"
 
     ctx.fillText(
       score,
-      screenWidth - 50,
-      screenHeight -30
+      screenHeight - 50,//x=y
+      -(screenWidth - 30)//y=-x
     )
+    ctx.rotate(-90 * Math.PI / 180);
   }
   drawBowtie(ctx, fillStyle,score) {
   ctx.fillStyle = "rgba(200,200,200,0.3)";
